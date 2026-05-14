@@ -173,6 +173,97 @@ input:focus, select:focus {
   font-size: 0.9rem;
 }
 
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 2rem;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-logo-icon {
+  background: #ef4444;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-logo-text {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-user-info {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-user-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navbar-user-role {
+  color: #3b82f6;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-logout-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.navbar-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
 /* Internal Layout Utilities */
 .dashboard-page {
   padding-top: 6rem; /* Space for Navbar */
@@ -206,6 +297,26 @@ input:focus, select:focus {
     padding-bottom: 2rem;
   }
   
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  
+  .navbar-logo-text {
+    font-size: 1rem;
+  }
+  
+  .navbar-user-info {
+    display: none;
+  }
+  
+  .navbar-actions {
+    gap: 0.8rem;
+  }
+  
+  .auth-title {
+    font-size: 1.8rem;
+  }
+
   .glass-panel {
     padding: 1.5rem !important;
   }
@@ -252,6 +363,19 @@ input:focus, select:focus {
 
   .stat-value {
     font-size: 1.8rem !important;
+  }
+  
+  .navbar-logo-text {
+    display: none;
+  }
+  
+  .navbar-logout-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
   }
   
   .navbar-content {
