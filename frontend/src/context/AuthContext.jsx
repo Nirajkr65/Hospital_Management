@@ -12,8 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // If we had an endpoint to fetch user profile using the token, we would do it here.
-    // For now we will rely on what is returned during login/register.
+
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {

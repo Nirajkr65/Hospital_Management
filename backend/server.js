@@ -16,7 +16,7 @@ const io = new Server(server, {
   }
 });
 
-// Expose io to routes
+
 app.set('socketio', io);
 
 app.use(cors());
@@ -27,7 +27,7 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/appointments', require('./routes/appointmentRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 
-const PORT = process.env.PORT || 5050; // Aligned with your environment
+const PORT = process.env.PORT || 5050;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/hospital_management';
 
 mongoose.connect(MONGODB_URI)

@@ -39,13 +39,13 @@ const AdminDashboard = () => {
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', animation: 'fadeIn 0.6s ease-out' }}>
             
-            {/* Header / Actions Row */}
+
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, margin: 0 }}>Analytics Overview</h2>
                <button onClick={fetchStats} className="btn-primary" style={{ marginTop: 0, padding: '0.6rem 1.5rem', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.3)', boxShadow: 'none', fontSize: '0.9rem' }}>Refresh Live Data</button>
             </div>
 
-            {/* Stat Cards Grid */}
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
               <div className="stat-card">
                 <span className="stat-label">Total Patients</span>
@@ -64,10 +64,10 @@ const AdminDashboard = () => {
               </div>
             </div>
 
-            {/* Charts Row */}
+
             <div className="admin-charts-grid" style={{ display: 'grid', gap: '2rem', marginTop: '1rem' }}>
               
-              {/* Doctor Performance Bar Chart */}
+
               <div style={{ background: 'rgba(15, 23, 42, 0.4)', borderRadius: '16px', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <h3 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: '1.1rem', fontWeight: 600 }}>Doctor Performance (Patients Treated)</h3>
                 <div style={{ width: '100%', height: '300px' }}>
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              {/* Status Distribution Pie Chart */}
+
               <div style={{ background: 'rgba(15, 23, 42, 0.4)', borderRadius: '16px', padding: '1.5rem', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: '1.1rem', fontWeight: 600 }}>Queue Distribution</h3>
                 <div style={{ width: '100%', height: '300px' }}>

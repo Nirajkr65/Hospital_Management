@@ -9,13 +9,13 @@ const protect = async (req, res, next) => {
     req.headers.authorization.startsWith('Bearer')
   ) {
     try {
-      // Get token from header
+
       token = req.headers.authorization.split(' ')[1];
 
-      // Verify token
+
       const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your_fallback_secret_key');
 
-      // Get user from the token
+
       req.user = await User.findById(decoded.id).select('-password');
 
       next();
@@ -29,7 +29,7 @@ const protect = async (req, res, next) => {
   }
 };
 
-// Grant access to specific roles
+
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {

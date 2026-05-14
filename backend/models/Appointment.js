@@ -12,11 +12,11 @@ const appointmentSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: String, // format YYYY-MM-DD
+    type: String,
     required: true,
   },
   timeSlot: {
-    type: String, // e.g., '10:00 AM'
+    type: String,
     required: true,
   },
   tokenNumber: {

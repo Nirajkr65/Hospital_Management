@@ -24,7 +24,7 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card glass-panel">
-        <h2 className="auth-title">Welcome Back</h2>
+        <h2 className="auth-title">MEDIFLOW</h2>
         <p className="auth-subtitle">Sign in to your account</p>
         
         {error && <div className="auth-error">{error}</div>}

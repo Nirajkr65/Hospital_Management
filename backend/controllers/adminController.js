@@ -1,23 +1,21 @@
 const Appointment = require('../models/Appointment');
 const User = require('../models/User');
 
-// @desc    Get admin dashboard stats
-// @route   GET /api/admin/stats
-// @access  Protected/Admin
+
 const getDashboardStats = async (req, res) => {
   try {
     const today = new Date().toLocaleDateString('en-CA');
 
-    // 1. Total Patients Today
+
     const totalPatients = await Appointment.countDocuments({ date: today });
 
-    // 2. Status Distribution (for Pie Chart)
+
     const statusStats = await Appointment.aggregate([
       { $match: { date: today } },
       { $group: { _id: '$status', count: { $sum: 1 } } }
     ]);
 
-    // 3. Doctor Performance (Patients Done per doctor)
+
     const doctorStats = await Appointment.aggregate([
       { $match: { date: today } },
       { $group: { 

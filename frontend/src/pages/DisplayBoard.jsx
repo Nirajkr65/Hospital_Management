@@ -39,7 +39,7 @@ const DisplayBoard = () => {
 
   return (
     <div className="display-board-container">
-      {/* Header */}
+
       <div className="display-header">
         <div className="hospital-logo">
            <span className="plus-icon">+</span>
@@ -54,7 +54,7 @@ const DisplayBoard = () => {
       </div>
 
       <div className="display-main-grid">
-        {/* Left Side: Now Calling */}
+
         <div className="now-calling-section">
           <h2 className="section-title">Now Calling</h2>
           <div className="calling-cards-container">
@@ -74,7 +74,7 @@ const DisplayBoard = () => {
           </div>
         </div>
 
-        {/* Right Side: Upcoming */}
+
         <div className="upcoming-section">
           <h2 className="section-title">Up Next</h2>
           <div className="upcoming-list">
