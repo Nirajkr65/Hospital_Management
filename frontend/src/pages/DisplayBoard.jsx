@@ -10,7 +10,7 @@ const DisplayBoard = () => {
 
   const fetchQueue = async () => {
     try {
-      const res = await axios.get('http://localhost:5050/api/appointments/public/all');
+      const res = await axios.get('https://hospital-management-backend-1e7k.onrender.com/api/appointments/public/all');
       setQueue(res.data);
     } catch (error) {
       console.error('Failed to fetch public queue:', error);
@@ -23,7 +23,7 @@ const DisplayBoard = () => {
     fetchQueue();
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
 
-    const socket = io('http://localhost:5050');
+    const socket = io('https://hospital-management-backend-1e7k.onrender.com');
     socket.on('queueUpdated', () => {
       fetchQueue();
     });

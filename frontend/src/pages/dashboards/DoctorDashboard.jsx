@@ -19,7 +19,7 @@ const DoctorDashboard = () => {
     if (!user?._id || isFetching) return;
     try {
       setIsFetching(true);
-      const res = await axios.get(`http://localhost:5050/api/appointments/${user._id}`);
+      const res = await axios.get(`https://hospital-management-backend-1e7k.onrender.com/api/appointments/${user._id}`);
       
       const timeToMinutes = (timeStr) => {
         const [time, period] = timeStr.split(' ');
@@ -61,7 +61,7 @@ const DoctorDashboard = () => {
 
   // Socket Hook
   useEffect(() => {
-    const socket = io('http://localhost:5050');
+    const socket = io('https://hospital-management-backend-1e7k.onrender.com');
     
     socket.on('queueUpdated', () => {
       console.log('Real-Time Ping: Queue changed! Refetching active state...');
@@ -76,7 +76,7 @@ const DoctorDashboard = () => {
 
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5050/api/appointments/${id}/status`, { status: newStatus });
+      await axios.put(`https://hospital-management-backend-1e7k.onrender.com/api/appointments/${id}/status`, { status: newStatus });
       fetchQueue();
     } catch (error) {
       console.error('Failed to update status:', error);

@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5050/api/auth/login', { email, password });
+      const res = await axios.post('https://hospital-management-backend-1e7k.onrender.com/api/auth/login', { email, password });
       const { token, ...userData } = res.data;
       setToken(token);
       setUser(userData);
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password, role, phone) => {
     setLoading(true);
     try {
-      await axios.post('http://localhost:5050/api/auth/register', { name, email, password, role, phone });
+      await axios.post('https://hospital-management-backend-1e7k.onrender.com/api/auth/register', { name, email, password, role, phone });
       return { success: true };
     } catch (error) {
       return { success: false, message: error.response?.data?.message || 'Registration failed' };

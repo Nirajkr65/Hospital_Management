@@ -17,7 +17,7 @@ const AdminDashboard = () => {
   const fetchStats = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5050/api/admin/stats');
+      const res = await axios.get('https://hospital-management-backend-1e7k.onrender.com/api/admin/stats');
       setStats(res.data);
     } catch (error) {
       console.error('Failed to fetch admin stats:', error);

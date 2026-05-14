@@ -38,12 +38,12 @@ const PatientDashboard = () => {
     try {
       setIsFetching(true);
       // Fetch Doctors
-      const docRes = await axios.get('http://localhost:5050/api/users/doctors');
+      const docRes = await axios.get('https://hospital-management-backend-1e7k.onrender.com/api/users/doctors');
       setDoctors(docRes.data);
       if (docRes.data.length > 0 && !doctorId) setDoctorId(docRes.data[0]._id);
       
       // Fetch My Appointments
-      const apptRes = await axios.get(`http://localhost:5050/api/appointments/${user._id}`);
+      const apptRes = await axios.get(`https://hospital-management-backend-1e7k.onrender.com/api/appointments/${user._id}`);
       const latestAppointments = apptRes.data;
       setAppointments(latestAppointments);
       
@@ -53,7 +53,7 @@ const PatientDashboard = () => {
       
       if (waitingAppts.length > 0) {
         const statPromises = waitingAppts.map(appt => 
-          axios.get(`http://localhost:5050/api/appointments/${appt._id}/queue-status`)
+          axios.get(`https://hospital-management-backend-1e7k.onrender.com/api/appointments/${appt._id}/queue-status`)
         );
         const statResponses = await Promise.all(statPromises);
         
@@ -78,7 +78,7 @@ const PatientDashboard = () => {
 
   // Socket Live Subscription Engine
   useEffect(() => {
-    const socket = io('http://localhost:5050');
+    const socket = io('https://hospital-management-backend-1e7k.onrender.com');
     
     socket.on('queueUpdated', () => {
       console.log('Real-Time Ping: My appointments changed! Refetching active state...');
@@ -96,7 +96,7 @@ const PatientDashboard = () => {
     setFormMsg({ text: '', type: '' });
     
     try {
-      await axios.post('http://localhost:5050/api/appointments', {
+      await axios.post('https://hospital-management-backend-1e7k.onrender.com/api/appointments', {
         doctorId,
         date,
         timeSlot
